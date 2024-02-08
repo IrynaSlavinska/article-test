@@ -1,20 +1,20 @@
 import { Routes, Route } from 'react-router-dom';
 
-import { Layout } from './Layout/Layout';
-import { MainPage } from '../pages/MainPage';
+import { MainPage } from 'pages/MainPage';
+import { LoginPage } from 'pages/LoginPage';
+import { RegisterPage } from 'pages/RegisterPage';
 
 export const App = () => {
   return (
     <Routes>
-      <Route path="/" element={<Layout />}>
-        <Route index element={<MainPage />} />
+      <Route path="/" element={<MainPage />} />
+      <Route path="/register" element={<RegisterPage />} />
+      <Route path="/login" element={<LoginPage />} />
+      <Route path="/articles" element={<div>ArticlesPage</div>} />
 
-        <Route path="register" element={<div>RegisterPage</div>} />
-        <Route path="login" element={<div>LoginPage</div>} />
-        <Route path="/articles" element={<div>ArticlesPage</div>} />
+      <Route path="*" element={<div>NotFoundPage</div>}></Route>
 
-        <Route path="*" element={<div>NotFoundPage</div>}></Route>
-      </Route>
+      {/* <Route path="*" element={<NotFound to={'/'} />}></Route> */}
     </Routes>
   );
 };
