@@ -1,16 +1,16 @@
 import { Routes, Route } from 'react-router-dom';
 
 import { MainPage } from 'pages/MainPage';
-import { LoginPage } from 'pages/LoginPage';
-import { RegisterPage } from 'pages/RegisterPage';
+import { AuthRootComponent } from 'components/AuthRoot/AuthRootComponent';
+import { ArticlesPage } from 'pages/ArticlesPage';
 
 export const App = () => {
   return (
     <Routes>
       <Route path="/" element={<MainPage />} />
-      <Route path="/register" element={<RegisterPage />} />
-      <Route path="/login" element={<LoginPage />} />
-      <Route path="/articles" element={<div>ArticlesPage</div>} />
+      <Route path="/register" element={<AuthRootComponent />} />
+      <Route path="/login" element={<AuthRootComponent />} />
+      <Route path="/articles" element={<ArticlesPage />} />
 
       <Route path="*" element={<div>NotFoundPage</div>}></Route>
 
