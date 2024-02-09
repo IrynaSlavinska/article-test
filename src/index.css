@@ -27,12 +27,12 @@ ol {
 }
 a {
   text-decoration: none;
-  color: #000000;
+  color: rgb(14, 14, 58);
 }
 
 body {
   font-family: 'DM Sans', sans-serif;
-  color: #000000;
+  color: rgb(14, 14, 58);
   font-style: normal;
   letter-spacing: -0.56px;
   line-height: 1.33;

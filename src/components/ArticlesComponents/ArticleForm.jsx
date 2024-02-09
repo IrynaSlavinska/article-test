@@ -3,7 +3,8 @@ import { nanoid } from 'nanoid';
 import { useDispatch } from 'react-redux';
 
 import { addArticleAction } from '../../redux/slices/articlesSlice';
-import { Form, Text, Label, Input, Button } from './ArticleComponents.styled';
+import { Form, Text, Label, Input } from './ArticleComponents.styled';
+import { NeonButton } from 'components/Layout/Layout.styled';
 
 export const ArticleForm = () => {
   const [title, setTitle] = useState('');
@@ -63,7 +64,7 @@ export const ArticleForm = () => {
         />
       </Label>
 
-      <Button type="submit">Submit</Button>
+      <NeonButton type="submit">Submit</NeonButton>
     </Form>
   );
 };

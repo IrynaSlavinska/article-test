@@ -21,19 +21,15 @@ export const Form = styled.form`
   }
 `;
 
-export const Text = styled.p`
-  text-align: center;
-  font-size: 20px;
-  color: #fff;
-`;
-
 export const Label = styled.label`
   font-size: 18px;
   max-width: 100%;
   color: #fff;
 
   @media (min-width: 576px) {
+    width: 650px;
     display: flex;
+    flex-direction: column;
     align-items: center;
   }
 `;
@@ -62,48 +58,8 @@ export const Input = styled.input`
   }
 `;
 
-export const List = styled.ul`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-top: 10px;
-  gap: 10px;
-
-  @media (min-width: 576px) {
-    flex-wrap: wrap;
-    flex-direction: row;
-    gap: 14px;
-    margin-top: 14px;
-    justify-content: center;
-    margin: 14px auto;
-  }
-
-  @media (min-width: 992px) {
-    width: 1000px;
-  }
-`;
-
-export const Item = styled.li`
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
-  width: 300px;
-  background-color: rgb(14, 14, 58);
-  padding: 10px;
-  border-radius: 4px;
-
-  @media (min-width: 576px) {
-    max-width: 300px;
-  }
-
-  @media (min-width: 992px) {
-    min-width: 280px;
-  }
-`;
-
-export const Div = styled.div``;
-export const ButtonDiv = styled.div`
-  display: flex;
-  gap: 10px;
+export const Text = styled.p`
+  text-align: center;
+  font-size: 20px;
+  color: #fff;
 `;

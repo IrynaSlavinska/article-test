@@ -4,14 +4,8 @@ import {
   removeArticleAction,
   replaceArticleAction,
 } from '../../redux/slices/articlesSlice';
-import {
-  List,
-  Item,
-  Div,
-  Button,
-  ButtonDiv,
-  Text,
-} from './ArticleComponents.styled';
+import { List, Item, Div, ButtonDiv, Text } from './ArticleComponents.styled';
+import { NeonButton } from 'components/Layout/Layout.styled';
 
 export const Articles = () => {
   const filter = useSelector(getFilterSelector);
@@ -59,17 +53,17 @@ export const Articles = () => {
             <Text>{description}</Text>
           </Div>
           <ButtonDiv>
-            <Button
+            <NeonButton
               type="button"
               onClick={() => {
                 pinArticle(id);
               }}
             >
               Pin
-            </Button>
-            <Button type="button" onClick={() => removeArticle(id)}>
+            </NeonButton>
+            <NeonButton type="button" onClick={() => removeArticle(id)}>
               Remove
-            </Button>
+            </NeonButton>
           </ButtonDiv>
         </Item>
       ))}
