@@ -52,3 +52,9 @@ body::-webkit-scrollbar-thumb {
   border-radius: 20px;
   border: 1px solid #1dacd6;
 } */
+.cont {
+  background-color: rgb(180, 66, 66);
+  display: flex;
+  justify-content: space-between;
+  text-align: center;
+}

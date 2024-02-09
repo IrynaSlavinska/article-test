@@ -1,3 +1,5 @@
+import { Title } from './PageStyles.styled';
+
 export const MainPage = () => {
-  return <h1>Main Page</h1>;
+  return <Title>Main Page</Title>;
 };

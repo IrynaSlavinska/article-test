@@ -1,3 +1,5 @@
+import { Title } from './PageStyles.styled';
+
 export const RegisterPage = () => {
-  return <></>;
+  return <Title>Register Page</Title>;
 };

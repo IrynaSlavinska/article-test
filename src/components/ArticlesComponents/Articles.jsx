@@ -25,6 +25,17 @@ export const Articles = () => {
 
   const visibleArticles = getFiltredArticles();
 
+  const pinArticle = id => {
+    // console.log(id);
+    const index = articles.findIndex(art => art.id === id);
+    // console.log(index);
+    const element = articles.splice(index, 1);
+    console.log(element);
+    console.log(articles);
+    // articles.unshift(element);
+    // return articles;
+  };
+
   return (
     <ul>
       {visibleArticles.map(({ id, title, description }) => (
@@ -34,7 +45,14 @@ export const Articles = () => {
             <p>{description}</p>
           </div>
           <div>
-            <button type="button">Pin</button>
+            <button
+              type="button"
+              onClick={() => {
+                pinArticle(id);
+              }}
+            >
+              Pin
+            </button>
             <button type="button" onClick={() => removeArticle(id)}>
               Remove
             </button>

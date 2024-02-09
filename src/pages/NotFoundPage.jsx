@@ -1,5 +1,11 @@
 import { NavLink } from 'react-router-dom';
+import { Title } from './PageStyles.styled';
 
 export const NotFoundPage = () => {
-  return <NavLink to="/">Home</NavLink>;
+  return (
+    <>
+      <Title>Not Found Page</Title>
+      <NavLink to="/">Home</NavLink>)
+    </>
+  );
 };
