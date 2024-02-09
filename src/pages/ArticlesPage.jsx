@@ -1,5 +1,5 @@
 import { Filter } from 'components/ArticlesComponents/Filter';
-import { Articles } from 'components/ArticlesComponents/Articles';
+import { Articles } from 'components/ArticlesComponents/ArticlesList';
 import { ArticleForm } from 'components/ArticlesComponents/ArticleForm';
 import { Title } from './PageStyles.styled';
 

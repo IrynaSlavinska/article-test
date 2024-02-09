@@ -2,7 +2,8 @@ import { useState } from 'react';
 import { nanoid } from 'nanoid';
 import { useDispatch } from 'react-redux';
 
-import { addArticleAction } from '../../redux/articlesSlice';
+import { addArticleAction } from '../../redux/slices/articlesSlice';
+import { Form, Text, Label, Input, Button } from './ArticleComponents.styled';
 
 export const ArticleForm = () => {
   const [title, setTitle] = useState('');
@@ -36,11 +37,11 @@ export const ArticleForm = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <p>Create your own article</p>
-      <label>
+    <Form onSubmit={handleSubmit}>
+      <Text>Create your own article</Text>
+      <Label>
         Title
-        <input
+        <Input
           type="text"
           name="title"
           value={title}
@@ -48,11 +49,11 @@ export const ArticleForm = () => {
           required
           placeholder="Name your article"
         />
-      </label>
+      </Label>
 
-      <label>
+      <Label>
         Description
-        <input
+        <Input
           type="text"
           name="description"
           value={description}
@@ -60,9 +61,9 @@ export const ArticleForm = () => {
           required
           placeholder="Enter description"
         />
-      </label>
+      </Label>
 
-      <button type="submit">Submit</button>
-    </form>
+      <Button type="submit">Submit</Button>
+    </Form>
   );
 };

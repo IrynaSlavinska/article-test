@@ -1,8 +1,8 @@
 import { useDispatch, useSelector } from 'react-redux';
 
 import { getFilterSelector } from '../../redux/selectors';
-import { setSearchFilterAction } from '../../redux/filterSlice';
-
+import { setSearchFilterAction } from '../../redux/slices/filterSlice';
+import { Input, Label } from './ArticleComponents.styled';
 export const Filter = () => {
   const { filter } = useSelector(getFilterSelector);
   const dispatch = useDispatch();
@@ -12,14 +12,14 @@ export const Filter = () => {
   };
 
   return (
-    <label>
-      <input
+    <Label>
+      <Input
         type="text"
         name="filter"
         value={filter}
         placeholder="Search..."
         onChange={filterChange}
       />
-    </label>
+    </Label>
   );
 };

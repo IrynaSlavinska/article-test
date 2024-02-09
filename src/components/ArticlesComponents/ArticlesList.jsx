@@ -1,6 +1,17 @@
 import { useDispatch, useSelector } from 'react-redux';
 import { getArticlesSelector, getFilterSelector } from '../../redux/selectors';
-import { removeArticleAction } from '../../redux/articlesSlice';
+import {
+  removeArticleAction,
+  replaceArticleAction,
+} from '../../redux/slices/articlesSlice';
+import {
+  List,
+  Item,
+  Div,
+  Button,
+  ButtonDiv,
+  Text,
+} from './ArticleComponents.styled';
 
 export const Articles = () => {
   const filter = useSelector(getFilterSelector);
@@ -25,40 +36,43 @@ export const Articles = () => {
 
   const visibleArticles = getFiltredArticles();
 
-  const pinArticle = id => {
-    // console.log(id);
-    const index = articles.findIndex(art => art.id === id);
-    // console.log(index);
-    const element = articles.splice(index, 1);
-    console.log(element);
-    console.log(articles);
-    // articles.unshift(element);
-    // return articles;
-  };
+  // const pinArticle = id => {
+  //   // console.log(id);
+  //   // const index = articles.findIndex(art => art.id === id);
+  //   // console.log(index);
+  //   // const element = articles.splice(index, 1);
+  //   // console.log(element);
+  //   // console.log(articles);
+  //   // articles.unshift(element);
+  //   // return articles;
+
+  // };
+
+  const pinArticle = id => dispatch(replaceArticleAction(id));
 
   return (
-    <ul>
+    <List>
       {visibleArticles.map(({ id, title, description }) => (
-        <li key={id}>
-          <div>
-            <p>{title}</p>
-            <p>{description}</p>
-          </div>
-          <div>
-            <button
+        <Item key={id}>
+          <Div>
+            <Text>{title}</Text>
+            <Text>{description}</Text>
+          </Div>
+          <ButtonDiv>
+            <Button
               type="button"
               onClick={() => {
                 pinArticle(id);
               }}
             >
               Pin
-            </button>
-            <button type="button" onClick={() => removeArticle(id)}>
+            </Button>
+            <Button type="button" onClick={() => removeArticle(id)}>
               Remove
-            </button>
-          </div>
-        </li>
+            </Button>
+          </ButtonDiv>
+        </Item>
       ))}
-    </ul>
+    </List>
   );
 };
