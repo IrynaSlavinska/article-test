@@ -36,9 +36,8 @@ body {
   font-style: normal;
   letter-spacing: -0.56px;
   line-height: 1.33;
-  padding: 32px;
+  padding: 0 32px;
   margin: 0;
-  background-color: #c4c4c4;
 }
 /* body::-webkit-scrollbar {
   width: 8px;
