@@ -1,20 +1,20 @@
 import { Routes, Route } from 'react-router-dom';
 
 import { MainPage } from 'pages/MainPage';
-import { AuthRootComponent } from 'components/AuthRoot/AuthRootComponent';
+import { LoginPage } from 'pages/LoginPage';
+import { RegisterPage } from 'pages/RegisterPage';
 import { ArticlesPage } from 'pages/ArticlesPage';
+import { NotFoundPage } from 'pages/NotFoundPage';
 
 export const App = () => {
   return (
     <Routes>
       <Route path="/" element={<MainPage />} />
-      <Route path="/register" element={<AuthRootComponent />} />
-      <Route path="/login" element={<AuthRootComponent />} />
+      <Route path="/register" element={<RegisterPage />} />
+      <Route path="/login" element={<LoginPage />} />
       <Route path="/articles" element={<ArticlesPage />} />
 
-      <Route path="*" element={<div>NotFoundPage</div>}></Route>
-
-      {/* <Route path="*" element={<NotFound to={'/'} />}></Route> */}
+      <Route path="*" element={<NotFoundPage to={'/'} />}></Route>
     </Routes>
   );
 };

@@ -1,6 +1,6 @@
 import { Filter } from 'components/ArticlesComponents/Filter';
 import { Articles } from 'components/ArticlesComponents/Articles';
-import { ArticleForm } from 'components/ArticlesComponents/ArtcleForm';
+import { ArticleForm } from 'components/ArticlesComponents/ArticleForm';
 
 export const ArticlesPage = () => {
   return (
