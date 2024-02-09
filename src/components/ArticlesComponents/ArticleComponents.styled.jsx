@@ -86,6 +86,7 @@ export const List = styled.ul`
 export const Item = styled.li`
   display: flex;
   flex-direction: column;
+  flex-direction: column;
   justify-content: space-between;
   align-items: center;
   width: 300px;
@@ -106,4 +107,5 @@ export const Div = styled.div``;
 export const ButtonDiv = styled.div`
   display: flex;
   gap: 10px;
+  margin-top: 4px;
 `;
