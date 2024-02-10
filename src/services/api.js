@@ -6,7 +6,7 @@ axios.defaults.headers.common['x-api-key'] = API_KEY;
 
 export const getArticles = async page => {
   const result = await axios.get(
-    `${BASE_URL}v2/top-headlines?category=technology`
+    `${BASE_URL}v2/top-headlines?sources=bbc-news&${page}`
   );
   return result;
 };

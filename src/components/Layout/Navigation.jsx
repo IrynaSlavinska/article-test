@@ -14,11 +14,9 @@ export const Navigation = () => {
       </NavItem>
 
       {isLoggedIn && (
-        <>
-          <NavItem>
-            <StyledLink to="articles">My articles</StyledLink>
-          </NavItem>
-        </>
+        <NavItem>
+          <StyledLink to="articles">My articles</StyledLink>
+        </NavItem>
       )}
     </NavigationMenu>
   );
