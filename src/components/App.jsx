@@ -1,4 +1,6 @@
 import { Routes, Route } from 'react-router-dom';
+import { PrivateRoute } from '../routes/PrivateRoute';
+import { PublicRoute } from '../routes/PublicRoute';
 
 import {
   MainPage,
@@ -14,9 +16,23 @@ export const App = () => {
     <Routes>
       <Route path="/" element={<Layout />}>
         <Route index element={<MainPage />} />
-        <Route path="register" element={<RegisterPage />} />
-        <Route path="login" element={<LoginPage />} />
-        <Route path="articles" element={<ArticlesPage />} />
+
+        <Route
+          path="register"
+          element={<PublicRoute component={<RegisterPage />} />}
+        />
+
+        <Route
+          path="login"
+          element={<PublicRoute component={<LoginPage />} />}
+        />
+
+        <Route
+          path="articles"
+          element={
+            <PrivateRoute redirectTo="/login" component={<ArticlesPage />} />
+          }
+        />
 
         <Route path="*" element={<NotFoundPage to={'/'} />}></Route>
       </Route>

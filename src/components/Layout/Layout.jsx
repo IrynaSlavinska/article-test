@@ -1,26 +1,12 @@
-import { NavLink, Outlet } from 'react-router-dom';
+import { Outlet } from 'react-router-dom';
 import { Suspense } from 'react';
-import { LayoutContainer, Header, Navigation } from './Layout.styled';
+import { LayoutContainer } from './Layout.styled';
+import { AppBar } from './AppBar';
 
 export const Layout = () => {
   return (
     <LayoutContainer>
-      <Header>
-        <Navigation>
-          <li>
-            <NavLink to="/">Main</NavLink>
-          </li>
-          <li>
-            <NavLink to="/articles">Articles</NavLink>
-          </li>
-          <li>
-            <NavLink to="login">Login</NavLink>
-          </li>
-          <li>
-            <NavLink to="register">Register</NavLink>
-          </li>
-        </Navigation>
-      </Header>
+      <AppBar />
       <main>
         <Suspense fallback={null}>
           <Outlet />
