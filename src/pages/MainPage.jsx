@@ -12,7 +12,7 @@ export const MainPage = () => {
         console.log(articles);
       })
       .catch(err => console.log(err));
-  }, []);
+  }, [articles]);
 
   return <Title>Main Page</Title>;
 };
