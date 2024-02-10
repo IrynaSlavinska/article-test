@@ -12,11 +12,3 @@ export const getArticles = async (currentPage = 1, pageSize = 10) => {
   );
   return result;
 };
-
-// const fetchArticles = ({ searchQuery = '', currentPage = 1, pageSize = 5 }) => {
-//   return axios
-//     .get(
-//       `https://newsapi.org/v2/everything?q=${searchQuery}&pageSize=${pageSize}&page=${currentPage}`
-//     )
-//     .then(response => response.data.articles);
-// };

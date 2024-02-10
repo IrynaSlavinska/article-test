@@ -8,8 +8,6 @@ import {
 } from './ArticleGallery.styled';
 
 export const ArticlesGallery = ({ articles }) => {
-  console.log(articles);
-
   return (
     <List>
       {articles.map(({ author, title, description, urlToImage }) => {

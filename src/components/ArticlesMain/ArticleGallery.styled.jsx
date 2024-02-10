@@ -23,7 +23,7 @@ export const List = styled.ul`
 
 export const Item = styled.li`
   width: 300px;
-  height: 380px;
+  height: 500px;
   background-color: rgb(14, 14, 58);
   padding: 16px;
   border-radius: 4px;

@@ -4,6 +4,7 @@ import { loginUserAction } from '../../redux/slices/authSlice';
 
 import { Form, Label, Input } from './FormStyles.styled';
 import { NeonButton } from 'components/Layout/Layout.styled';
+
 export const LoginForm = () => {
   const [user, setUser] = useState('');
   const [password, setPassword] = useState('');

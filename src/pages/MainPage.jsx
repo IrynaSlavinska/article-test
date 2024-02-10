@@ -1,23 +1,32 @@
 import { useEffect, useState } from 'react';
-import { getArticles } from 'services/api';
+import { useDispatch, useSelector } from 'react-redux';
+import {
+  selectIsLoading,
+  selectError,
+  selectArticles,
+} from '../redux/articles/articlesDBSelectors';
+import { getArticlesAction } from '../redux/articles/articlesOperations';
 import { ArticlesGallery } from 'components/ArticlesMain/ArticlesGallery';
 import { NeonShowMore } from 'components/Layout/Layout.styled';
 import { Loader } from 'components/Loader/Loader';
+import { clearArticlesDB } from '../redux/articles/articlesDBSlice';
 
 export const MainPage = () => {
-  const [articles, setArticles] = useState([]);
+  const articlesDB = useSelector(selectArticles);
+  const isLoading = useSelector(selectIsLoading);
+  const error = useSelector(selectError);
   const [page, setPage] = useState(1);
-  const [isLoading, setIsLoading] = useState(false);
+  const dispatch = useDispatch();
 
   useEffect(() => {
-    setIsLoading(true);
-    getArticles(page)
-      .then(result => {
-        setIsLoading(false);
-        setArticles(result.data.articles);
-      })
-      .catch(err => console.log(err));
-  }, [page]);
+    dispatch(getArticlesAction(page));
+  }, [dispatch, page]);
+
+  useEffect(() => {
+    return () => {
+      dispatch(clearArticlesDB());
+    };
+  }, [dispatch]);
 
   const handleClick = () => {
     setPage(prevPage => prevPage + 1);
@@ -26,9 +35,10 @@ export const MainPage = () => {
   return (
     <>
       {isLoading && <Loader />}
-      {articles.length > 0 && (
+      {error && <p>Something went wrong!. Try again later</p>}
+      {articlesDB.length > 0 && (
         <>
-          <ArticlesGallery articles={articles} />
+          <ArticlesGallery articles={articlesDB} />
           <NeonShowMore type="button" onClick={() => handleClick()}>
             Show more
           </NeonShowMore>
