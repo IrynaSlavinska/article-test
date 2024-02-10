@@ -11,15 +11,21 @@ export const MainPage = () => {
     getArticles(page)
       .then(result => {
         setArticles(result.data.articles);
-        setPage();
       })
       .catch(err => console.log(err));
   }, [page]);
 
+  const handleClick = () => {
+    setPage(prevPage => prevPage + 1);
+    console.log(page);
+  };
+
   return (
     <>
       <ArticlesGallery articles={articles} />
-      <NeonShowMore>Show more</NeonShowMore>
+      <NeonShowMore type="button" onClick={() => handleClick()}>
+        Show more
+      </NeonShowMore>
     </>
   );
 };

@@ -12,10 +12,8 @@ export const LoginForm = () => {
   const handleSubmit = e => {
     e.preventDefault();
     const loggedUser = { user, password };
-    console.log(loggedUser);
     dispatch(loginUserAction(loggedUser));
-    const form = e.currentTarget;
-    form.reset();
+    e.target.reset();
   };
 
   return (

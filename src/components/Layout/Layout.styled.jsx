@@ -1,7 +1,7 @@
 import styled from '@emotion/styled';
 import { NavLink } from 'react-router-dom';
 
-export const LayoutContainer = styled.div`
+export const Main = styled.main`
   margin: 0 auto;
   max-width: 575.8px;
   padding: 0 20px;
@@ -38,7 +38,8 @@ export const StyledLink = styled(NavLink)`
   padding: 8px;
   border-radius: 4px;
 
-  &.active {
+  &.active,
+  &:hover {
     color: rgb(14, 14, 58);
     background-color: #0bf4f3;
   }

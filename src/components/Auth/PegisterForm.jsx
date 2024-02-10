@@ -14,6 +14,7 @@ export const RegisterForm = () => {
     e.preventDefault();
     const user = { name, email, password };
     dispatch(registerUserAction(user));
+    e.target.reset();
   };
 
   return (
