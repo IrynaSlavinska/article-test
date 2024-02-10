@@ -3,6 +3,7 @@ import storage from 'redux-persist/lib/storage';
 
 import { articlesReducer } from './slices/articlesSlice';
 import { filterReducer } from './slices/filterSlice';
+import { authReducer } from './slices/authSlice';
 
 const persistConfig = {
   key: 'root',
@@ -14,4 +15,5 @@ const persistedReducer = persistReducer(persistConfig, articlesReducer);
 export const reducer = {
   articles: persistedReducer,
   filter: filterReducer,
+  auth: authReducer,
 };
