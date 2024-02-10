@@ -9,6 +9,7 @@ export const MainPage = () => {
     getArticles()
       .then(result => {
         setArticles(result);
+        console.log(articles);
       })
       .catch(err => console.log(err));
   }, []);
