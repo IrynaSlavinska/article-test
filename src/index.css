@@ -75,3 +75,7 @@ body::-webkit-scrollbar-thumb {
   padding: 0 16px;
   justify-content: space-between;
 }
+
+.cont {
+  object-fit: cover;
+}

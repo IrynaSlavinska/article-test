@@ -1,6 +1,7 @@
 import {
   List,
   Item,
+  ImgCont,
   ItemImg,
   ItemTitle,
   ItemSubtitle,
@@ -15,11 +16,13 @@ export const ArticlesGallery = ({ articles }) => {
       {articles.map(({ author, title, description, urlToImage }) => {
         return (
           <Item key={title}>
-            <ItemImg
-              src={urlToImage ? urlToImage : defaultImage}
-              alt={title}
-              width="300"
-            />
+            <ImgCont>
+              <ItemImg
+                src={urlToImage ? urlToImage : defaultImage}
+                alt={title}
+                width="300"
+              />
+            </ImgCont>
             <ItemTitle>{title}</ItemTitle>
             <ItemSubtitle>Author: {author}</ItemSubtitle>
             <ItemText>{description}</ItemText>

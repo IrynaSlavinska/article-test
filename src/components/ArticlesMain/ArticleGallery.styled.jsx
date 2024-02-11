@@ -20,7 +20,7 @@ export const List = styled.ul`
 export const Item = styled.li`
   max-width: 300px;
   width: 100%;
-  height: 500px;
+  height: 550px;
   background-color: rgb(14, 14, 58);
   padding: 10px;
   border-radius: 8px;
@@ -37,8 +37,13 @@ export const Item = styled.li`
   }
 `;
 
+export const ImgCont = styled.div`
+  height: 210px;
+`;
 export const ItemImg = styled.img`
   margin-bottom: 8px;
+  height: 100%;
+  object-fit: cover;
 `;
 
 export const ItemTitle = styled.h2`

@@ -40,14 +40,11 @@ export const Label = styled.label`
 `;
 
 export const Input = styled.input`
-  margin-left: 6px;
   padding: 8px;
   border-radius: 8px;
   font-size: 20px;
-  width: 350px;
   outline: transparent;
   border: 1px solid rgb(14, 14, 58);
-  margin-top: 4px;
   max-width: 90%;
   width: 450px;
   transition: 400ms ease all;
@@ -59,7 +56,24 @@ export const Input = styled.input`
 
   @media (min-width: 576px) {
     margin: 0 auto;
-    margin-top: 8px;
+    margin-left: 8px;
+  }
+`;
+
+export const SearchInput = styled.input`
+  padding: 8px;
+  border-radius: 8px;
+  font-size: 20px;
+  outline: transparent;
+  border: 1px solid rgb(14, 14, 58);
+  max-width: 90%;
+  width: 450px;
+  transition: 400ms ease all;
+  margin: 0 auto;
+
+  &: hover {
+    border: 1px solid #0bf4f3;
+    box-shadow: 0 0 5px #0bf4f3, 0 0 5px #0bf4f3 inset;
   }
 `;
 

@@ -2,7 +2,8 @@ import { useDispatch, useSelector } from 'react-redux';
 
 import { getFilterSelector } from '../../redux/selectors';
 import { setSearchFilterAction } from '../../redux/slices/filterSlice';
-import { Input, Label } from './ArticleComponents.styled';
+import { SearchInput, Label } from './ArticleComponents.styled';
+// import { Input, Label } from './ArticleComponents.styled';
 export const Filter = () => {
   const { filter } = useSelector(getFilterSelector);
   const dispatch = useDispatch();
@@ -13,7 +14,7 @@ export const Filter = () => {
 
   return (
     <Label>
-      <Input
+      <SearchInput
         type="text"
         name="filter"
         value={filter}
