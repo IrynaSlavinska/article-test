@@ -39,43 +39,16 @@ body {
   margin: 0;
   background-color: #0bf4f3;
 }
-/* body::-webkit-scrollbar {
-  width: 8px;
+body::-webkit-scrollbar {
+  width: 10px;
 }
 
 body::-webkit-scrollbar-track {
-  background: #1dabd6;
+  background: rgb(14, 14, 58);
 }
 
 body::-webkit-scrollbar-thumb {
-  background-color: #283044;
+  background-color: #0bf4f3;
   border-radius: 20px;
-  border: 1px solid #1dacd6;
-} */
-
-.cont {
-  position: fixed;
-  width: 100%;
-  top: 0;
-  left: 0;
-  z-index: 50;
-
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-
-  position: relative;
-  z-index: 2;
-
-  max-width: 1440px;
-  margin: 0 auto;
-  padding: 0 16px;
-  justify-content: space-between;
-}
-
-.cont {
-  object-fit: cover;
+  border: 1px solid rgb(14, 14, 58);
 }
