@@ -105,6 +105,12 @@ export const NeonButton = styled.button`
     @media (max-width: 576px) {
     font-size: 14px;
   }
+  ${({ isActive }) =>
+    isActive &&
+    `
+background-color: #0bf4f3;
+color: rgb(14, 14, 58);
+  `}
 `;
 
 export const UserMenuContainer = styled.div`

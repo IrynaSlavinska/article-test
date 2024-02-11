@@ -30,19 +30,15 @@ export const Articles = () => {
 
   const visibleArticles = getFiltredArticles();
 
-  // const pinArticle = id => {
-  //   // console.log(id);
-  //   // const index = articles.findIndex(art => art.id === id);
-  //   // console.log(index);
-  //   // const element = articles.splice(index, 1);
-  //   // console.log(element);
-  //   // console.log(articles);
-  //   // articles.unshift(element);
-  //   // return articles;
-
-  // };
-
-  const pinArticle = id => dispatch(replaceArticleAction(id));
+  const pinArticle = articleId => {
+    const pinnedArticle = articles.find(article => article.id === articleId);
+    const filteredArticles = articles.filter(
+      article => article.id !== articleId
+    );
+    const newList = [pinnedArticle, ...filteredArticles];
+    dispatch(replaceArticleAction(newList));
+    return newList;
+  };
 
   return (
     <List>

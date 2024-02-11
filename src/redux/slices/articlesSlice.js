@@ -11,15 +11,7 @@ const articlesSlice = createSlice({
       state.articles = state.articles.filter(art => art.id !== action.payload);
     },
     replaceArticleAction: (state, action) => {
-      const newArray = [...state.articles];
-      const { id } = action.payload;
-
-      const elementToMove = newArray.splice(id, 1)[0];
-      newArray.unshift(elementToMove);
-      return {
-        ...state,
-        array: newArray,
-      };
+      state.articles = action.payload;
     },
   },
 });

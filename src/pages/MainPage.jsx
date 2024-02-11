@@ -41,14 +41,10 @@ export const MainPage = () => {
       {articlesDB.length > 0 && (
         <>
           <ArticlesGallery articles={articlesDB} />
-          {isLoading ? (
-            <Loader />
-          ) : (
-            total >= articlesDB.length && (
-              <NeonShowMore type="button" onClick={() => handleClick()}>
-                Show more
-              </NeonShowMore>
-            )
+          {total > articlesDB.length && (
+            <NeonShowMore type="button" onClick={() => handleClick()}>
+              Show more
+            </NeonShowMore>
           )}
         </>
       )}
