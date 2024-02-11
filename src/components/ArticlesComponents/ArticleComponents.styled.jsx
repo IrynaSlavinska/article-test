@@ -15,7 +15,7 @@ export const Form = styled.form`
     margin-bottom: 14px;
   }
 
-  @media (min-width: 576px) {
+  @media (min-width: 992px) {
     width: 600px;
     padding: 30px;
   }
@@ -23,8 +23,9 @@ export const Form = styled.form`
 
 export const Text = styled.p`
   text-align: center;
-  font-size: 20px;
+  font-size: 18px;
   color: #fff;
+  margin-bottom: 6px;
 `;
 
 export const Label = styled.label`
@@ -66,16 +67,13 @@ export const List = styled.ul`
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: 10px;
+  justify-content: center;
+  margin: 14px auto;
   gap: 10px;
 
   @media (min-width: 576px) {
-    flex-wrap: wrap;
     flex-direction: row;
-    gap: 14px;
-    margin-top: 14px;
-    justify-content: center;
-    margin: 14px auto;
+    flex-wrap: wrap;
   }
 
   @media (min-width: 992px) {
@@ -86,16 +84,18 @@ export const List = styled.ul`
 export const Item = styled.li`
   display: flex;
   flex-direction: column;
-  flex-direction: column;
-  justify-content: space-between;
   align-items: center;
-  width: 300px;
+  max-width: 300px;
+  width: 100%;
   background-color: rgb(14, 14, 58);
   padding: 10px;
-  border-radius: 4px;
+  border-radius: 8px;
 
   @media (min-width: 576px) {
-    max-width: 300px;
+    max-width: 210px;
+  }
+  @media (min-width: 720px) {
+    max-width: 280px;
   }
 
   @media (min-width: 992px) {

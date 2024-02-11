@@ -4,36 +4,36 @@ export const List = styled.ul`
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: 10px;
+  justify-content: center;
+  margin: 14px auto;
   gap: 10px;
 
   @media (min-width: 576px) {
-    flex-wrap: wrap;
     flex-direction: row;
-    justify-content: center;
-    gap: 14px;
-    margin-top: 14px;
-    margin: 14px auto;
+    flex-wrap: wrap;
   }
-
   @media (min-width: 992px) {
-    width: 1200px;
+    width: 1000px;
   }
 `;
 
 export const Item = styled.li`
-  width: 300px;
+  max-width: 300px;
+  width: 100%;
   height: 500px;
   background-color: rgb(14, 14, 58);
-  padding: 16px;
-  border-radius: 4px;
+  padding: 10px;
+  border-radius: 8px;
 
   @media (min-width: 576px) {
-    max-width: 300px;
+    max-width: 210px;
+  }
+  @media (min-width: 720px) {
+    max-width: 280px;
   }
 
   @media (min-width: 992px) {
-    min-width: 200px;
+    min-width: 280px;
   }
 `;
 

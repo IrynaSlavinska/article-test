@@ -14,7 +14,10 @@ export const getArticlesAction = createAsyncThunk(
       const response = await axios.get(
         `${BASE_URL}v2/top-headlines?country=ua&pageSize=10&page=${page}`
       );
-      return response.data.articles;
+      // console.log(response.data.totalResults);
+
+      return response.data;
+      // return response.data.articles;
     } catch (error) {
       return thunkAPI.rejectWithValue(error.message);
     }

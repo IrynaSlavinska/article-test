@@ -7,6 +7,7 @@ const articlesDBSlice = createSlice({
     articlesDB: [],
     isLoading: false,
     error: null,
+    totalResults: 0,
   },
   reducers: {
     clearArticlesDB(state, action) {
@@ -21,9 +22,10 @@ const articlesDBSlice = createSlice({
         state.isRefreshing = false;
       })
       .addCase(getArticlesAction.fulfilled, (state, action) => {
-        state.articlesDB = [...state.articlesDB, ...action.payload];
+        state.articlesDB = [...state.articlesDB, ...action.payload.articles];
         state.isLoading = false;
         state.error = null;
+        state.totalResults = action.payload.totalResults;
       })
       .addCase(getArticlesAction.rejected, (state, action) => {
         state.isLoading = false;

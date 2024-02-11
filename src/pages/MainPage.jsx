@@ -4,6 +4,7 @@ import {
   selectIsLoading,
   selectError,
   selectArticles,
+  selectTotal,
 } from '../redux/articles/articlesDBSelectors';
 import { getArticlesAction } from '../redux/articles/articlesOperations';
 import { ArticlesGallery } from 'components/ArticlesMain/ArticlesGallery';
@@ -15,6 +16,7 @@ export const MainPage = () => {
   const articlesDB = useSelector(selectArticles);
   const isLoading = useSelector(selectIsLoading);
   const error = useSelector(selectError);
+  const total = useSelector(selectTotal);
   const [page, setPage] = useState(1);
   const dispatch = useDispatch();
 
@@ -39,9 +41,15 @@ export const MainPage = () => {
       {articlesDB.length > 0 && (
         <>
           <ArticlesGallery articles={articlesDB} />
-          <NeonShowMore type="button" onClick={() => handleClick()}>
-            Show more
-          </NeonShowMore>
+          {isLoading ? (
+            <Loader />
+          ) : (
+            total >= articlesDB.length && (
+              <NeonShowMore type="button" onClick={() => handleClick()}>
+                Show more
+              </NeonShowMore>
+            )
+          )}
         </>
       )}
     </>
